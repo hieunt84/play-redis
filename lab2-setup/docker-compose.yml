@@ -4,6 +4,20 @@ networks:
     common:
 
 services:
+    portainer:
+        container_name: portainer
+        image: portainer/portainer
+        volumes:
+            - ./data/portainer:/data            
+            - /var/run/docker.sock:/var/run/docker.sock
+        #user: "${UID_GID}"
+        user: "0:0"
+        ports:
+            - "9000:9000"
+        networks:
+            - common
+        restart: always
+
     redis:
         container_name: redis
         image: redis:alpine

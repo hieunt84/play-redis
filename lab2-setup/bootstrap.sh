@@ -41,19 +41,6 @@ curl -fsSL https://get.docker.com/ | sh
 systemctl start docker
 systemctl enable docker
 
-# Install Portainer
-# Create volume cho portainer
-docker volume create portainer_data
-
-# download image portainer
-docker pull portainer/portainer
-
-# Run portainer container
-docker run -d -p 9000:9000 --name=portainer --restart=always \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v portainer_data:/data \
-  portainer/portainer
-
 # Install docker-compose
 sudo curl -sL "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
@@ -71,6 +58,9 @@ git clone https://github.com/hieunt84/play-redis.git
 
 # change working directory
 cd ./play-redis/lab2-setup
+
+# Make folder store data for portainer
+mkdir -p ./data/portainer
 
 # Make folder store data redis
 mkdir -p ./data/redis
