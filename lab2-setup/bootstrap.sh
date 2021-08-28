@@ -45,7 +45,10 @@ systemctl enable docker
 # Create volume cho portainer
 docker volume create portainer_data
 
-# Create portainer container
+# download image portainer
+docker pull portainer/portainer
+
+# Run portainer container
 docker run -d -p 9000:9000 --name=portainer --restart=always \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v portainer_data:/data \
@@ -79,6 +82,7 @@ mkdir -p ./config/redis
 cp ./redis.conf ./config/redis/redis.conf
 
 # deploy redis
+docker-compose pull
 docker-compose up -d
 
 #########################################################################################
