@@ -25,3 +25,4 @@ Step 2:
 https://xuanthulab.net/su-dung-redis-lam-server-de-cache-du-lieu.html
 https://toiyeuit.com/huong-dan-cai-redis-tren-centos-7-theo-3-cach-khac-nhau/
 https://github.com/hieunt84/docker-persistent-stack
+https://phoenixnap.com/kb/docker-redis

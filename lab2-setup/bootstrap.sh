@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script deploy nextcloud with docker
+# Script deploy redis with docker
 
 ##########################################################################################
 # SECTION 1: PREPARE
@@ -34,7 +34,7 @@ cat >> "/etc/hosts" <<END
 END
 
 ##########################################################################################
-# SECTION 2: INSTALL Dcoker, Docker-compse, Portainer
+# SECTION 2: INSTALL Dcoker, Docker-compse, Portainer, git
 
 # Install docker
 curl -fsSL https://get.docker.com/ | sh
@@ -46,11 +46,11 @@ sudo curl -sL "https://github.com/docker/compose/releases/download/1.29.2/docker
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-#########################################################################################
-# SECTION 3: DEPLOY NEXTCLOUD
-
 # install git
 yum -y install git
+
+#########################################################################################
+# SECTION 3: DEPLOY REDIS
 
 # clone repo from github
 cd ~
