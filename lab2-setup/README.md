@@ -1,5 +1,5 @@
-## setup basic
-- using docker run
+## info setup
+- using docker-compose
 - cấu hình redis với redis.conf
 
 ### Prepare
@@ -14,7 +14,7 @@ OS:Centos7-64bit
 - Bootstrap:bootstrap.sh
 - docker-compose.yml
 
-### Deploy
+### Các bước triên khai
 Step 1:
 - vagrant up
 
