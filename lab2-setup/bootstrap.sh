@@ -72,6 +72,12 @@ cd ./play-redis/lab2-setup
 # Make folder store data redis
 mkdir -p ./data/redis
 
+# Make folder store data config redis
+mkdir -p ./config/redis
+
+# copy redis.conf
+cp ./redis.conf ./config/redis/redis.conf
+
 # deploy redis
 docker-compose up -d
 
